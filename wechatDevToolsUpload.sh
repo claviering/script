@@ -3,12 +3,22 @@
 # wechat DevTools Upload 微信开发者工具命令行上传代码
 # 在.zshrc 或者 .bashrc中添加别名 alias cli-upload="/Users/linweiye/Documents/shell-script/wechatDevToolsUpload.sh"
 # git commit message 格式 version: des. 4.1.7: feature:添加xxx功能
-# 在小程序目录下使用 cli-upload
+# 在小程序目录下使用 cli-upload 或者 cli-upload "4.1.7: feature:添加xxx功能"
+# cli-upload后面没有带参数，会使用git commiet message
 
 dir=$(pwd)
 
-# get last git commit Message
-last_git_commit_message="$(git log -1 --pretty=%B)"
+if [ -z "$1" ]
+then
+  # get last git commit Message
+  last_git_commit_message="$(git log -1 --pretty=%B)"
+else
+  last_git_commit_message=$1
+fi
+
+echo $last_git_commit_message
+
+
 #Define multi-character delimiter
 delimiter=": "
 #Concatenate the delimiter with the main string
