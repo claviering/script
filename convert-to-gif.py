@@ -7,8 +7,9 @@ from PIL import Image
 # 图片转 GIF
 
 ## Usage
-# `python3 main.py -i inputfilename.png`
-# `python3 main.py -i inputfilename.png -o outputfilename.gif`
+# `python3 convert-to-gif.py -i inputfilename.png`
+# `python3 convert-to-gif.py -i inputfilename.png -o outputfilename.gif`
+# 添加快捷方式 alias togif="python3 convert-to-gif.py"
 
 
 def tips():
