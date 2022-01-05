@@ -30,5 +30,6 @@ try:
     image1 = Image.open(inputFileName)
     im1 = image1.convert('RGB')
     im1.save(outFileName)
+    os.remove(inputFileName)
 except:
     tips()
